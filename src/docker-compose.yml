@@ -3,8 +3,13 @@ version: '3.4'
 services:
   catalogdb:
     image: mongo
+    
   basketdb:
     image: redis:alpine
+    
+  portainer:
+    image: portainer/portainer-ce
+    
   catalog.api:
     image: ${DOCKER_REGISTERY-}catalogapi
     build:
@@ -19,4 +24,4 @@ services:
     
 volumes:
   mongo_data:
-    
+  portainer_data:
