@@ -17,7 +17,7 @@ public class ShoppingCart
     {
         get
         {
-            return Items.Sum(item => item.Price + item.Quantity);
+            return Items.Sum(item => item.Price * item.Quantity);
         }
     }
 }
