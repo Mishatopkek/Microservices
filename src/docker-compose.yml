@@ -10,6 +10,9 @@ services:
   discountdb:
     image: postgres
   
+  orderdb:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+  
   portainer:
     image: portainer/portainer-ce
     
@@ -36,6 +39,12 @@ services:
     build:
       context: .
       dockerfile: Services/Discount/Discount.Grpc/Dockerfile
+      
+  ordering.api:
+    image: ${DOCKER_REGISTERY-}orderingapi
+    build:
+      context: .
+      dockerfile: Services/Ordering/Ordering.API/Dockerfile
 
 volumes:
   mongo_data:

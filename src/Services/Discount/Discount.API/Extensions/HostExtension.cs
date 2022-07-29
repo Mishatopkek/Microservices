@@ -2,7 +2,7 @@
 
 namespace Discount.API.Extensions;
 
-public static class HostExtension
+public static class HostExtensions
 {
     public static IHost MigrateDatabase<TContext>(this IHost host, int? retry = 0)
     {
